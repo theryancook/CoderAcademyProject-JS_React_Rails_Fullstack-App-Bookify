@@ -2,6 +2,7 @@ import React from 'react'
 import ViewBooks from './ViewBooks'
 import ViewBook from './ViewBook'
 import { BrowserRouter, Route } from 'react-router-dom'
+import DeleteBook from './DeleteBook'
 
 
 const App = () => {

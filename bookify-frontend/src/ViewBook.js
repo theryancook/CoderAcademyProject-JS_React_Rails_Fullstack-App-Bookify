@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
+import DeleteBook from './DeleteBook'
 
 const ViewBook = (props) => {
 
@@ -27,6 +28,8 @@ const ViewBook = (props) => {
                     The genre is {book.genre}.
                     <br/>
                     <Link to={"/"}>Back to the main page</Link>
+                    <br />
+                    <DeleteBook songId={book.id} />
                     <br/><br/> 
                 </li>
         </div>
