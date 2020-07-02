@@ -1,9 +1,12 @@
 import React from 'react'
+import ViewBooks from './ViewBooks'
 
 
 const App = () => {
     return (
-        <div> App </div>
+        <div>
+            <ViewBooks />
+        </div>
     )
 }
 
