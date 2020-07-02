@@ -9,9 +9,9 @@ const App = () => {
         <div>
             <BrowserRouter>
             <Route exact path="/" component={ViewBooks}></Route>
+            <Route exact path="/:id" render={props => <ViewBook songId={props.match.params.id} />}></Route>
             </BrowserRouter>
             {/* <ViewBooks /> */}
-            <ViewBook songId="1" />
         </div>
     )
 }
