@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
+import { Link } from 'react-router-dom'
 
 const ViewBooks = () => {
 
@@ -25,6 +26,8 @@ const ViewBooks = () => {
                     {book.title} by {book.author}.
                     <br/> 
                     The genre is {book.genre}.
+                    <br/>
+                    <Link to={`/${book.id}`}>Check out the book here</Link>
                     <br/><br/> 
                 </li>
             ))}
