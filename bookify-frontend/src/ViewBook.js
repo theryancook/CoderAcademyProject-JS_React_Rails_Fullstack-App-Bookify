@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 
-const ViewBooks = () => {
+const ViewBook = (props) => {
 
-    const [books, setBooks] = useState([])
+    const [book, setBook] = useState([])
     const [errorMessage, setErrorMessage] = useState(null)
 
     useEffect(() => {
-        axios.get(`http://localhost:3000/books`)
+        axios.get(`http://localhost:3000/books/${props.songId}`)
         .then(res => {
-            setBooks(res.data)
+            setBook(res.data)
         })
         .catch(e => {
             setErrorMessage(e.message)
@@ -20,16 +20,14 @@ const ViewBooks = () => {
     return (
         <div>
             {errorMessage && <h3>{errorMessage}</h3>}
-            {books.map((book, index) => (
-                <li key={index}>
+                <li key={book.title}>
                     {book.title} by {book.author}.
                     <br/> 
                     The genre is {book.genre}.
                     <br/><br/> 
                 </li>
-            ))}
         </div>
     )
 }
 
-export default ViewBooks
+export default ViewBook
